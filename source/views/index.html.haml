@@ -1,4 +1,35 @@
 ---
-title: Page Title
+title: Archivist.fm
 ---
+
+#strip.strip
+  #now_playing.now-playing{:style => "visibility: hidden;"}
+    %img{:alt => "Now playing", :src => "assets/images/wifi.png"}/
+  .logo
+    %img{:alt => "Archivist", :src => "assets/images/logo.png"}/
+  .inner-strip
+    .radio-icons
+      #loading.loading
+        %img.flash{:height => "35", :src => "assets/images/dot1.png", :width => "29"}/
+        %img.flash.two{:height => "35", :src => "assets/images/dot2.png", :width => "29"}/
+        %img.flash.three{:height => "35", :src => "assets/images/dot3.png", :width => "29"}/
+      %a#play_button.radio-icon{:href => "#"}
+        %img{:alt => "Play", :src => "assets/images/play.png"}/
+      %a#pause_button.radio-icon{:href => "#"}
+        %img{:alt => "Pause", :src => "assets/images/pause.png"}/
+      #stream_error.stream-error{:style => "display: none;"}
+        To listen to Archivist.fm your browser requires
+        %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Adobe Flash Player
+        to be installed!
+    .definition
+      *
+      %span#definition
+        An attractive younger woman that has sexual relations with wealthy older men and records all conversations made between the two illegally. Then uses it as blackmail against said older men for monetary or public gain.
+    .social-icons
+      %a{"data-ot" => "Archivist.fm @ Facebook", "data-ot-stem" => "false", "data-ot-style" => "dark", :href => "https://www.facebook.com/pages/Archivistfm/1528837584029060", :target => "_blank"}
+        %img{:src => "assets/images/facebook.png"}/
+      %a{"data-ot" => "Archivist.fm @ Twitter", "data-ot-stem" => "false", "data-ot-style" => "dark", :href => "https://twitter.com/archivistradio", :target => "_blank"}
+        %img{:src => "assets/images/twitter.png"}/
+      %a.download-stream{"data-ot" => "Download stream", "data-ot-stem" => "false", "data-ot-style" => "dark", :href => "assets/archivist.fm.pls", :target => "_blank"}
+        %img{:src => "assets/images/download.png"}/
 
