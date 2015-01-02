@@ -101,6 +101,8 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.3)
       activesupport (>= 3.1)
+    proteus-kits (0.1)
+      thor
     ptools (1.2.6)
     rack (1.5.2)
     rack-livereload (0.3.15)
@@ -142,3 +144,4 @@ DEPENDENCIES
   middleman-deploy
   middleman-livereload
   neat
+  proteus-kits

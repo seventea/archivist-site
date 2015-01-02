@@ -2,6 +2,7 @@
 # the following line to use "https"
 source "http://rubygems.org"
 
+gem 'proteus-kits'
 gem "middleman"
 gem "middleman-livereload"
 gem "middleman-deploy"
