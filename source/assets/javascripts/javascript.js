@@ -21,28 +21,6 @@
             definition: document.getElementById('definition')
         };
 
-        // Wrapper for addEventListener vs attachEvent
-        // Shamelessly stolen from http://ejohn.org/projects/flexible-javascript-events/
-        Archivist.addEvent = function (object, eventType, handler) {
-            if (object.attachEvent) {
-                object['e' + eventType + handler] = handler;
-                object[eventType + handler] = function () {
-                    object['e' + eventType + handler](window.event);
-                };
-                object.attachEvent('on' + eventType, object[eventType + handler]);
-            } else {
-                object.addEventListener(eventType, handler, false);
-            }
-        };
-
-        // Wrapper for event.preventDefault vs event.returnValue = false
-        Archivist.preventDefault = function (event) {
-            event.returnValue = false;
-            if (event.preventDefault) {
-                event.preventDefault();
-            }
-        };
-
         Archivist.AudioStream = function (url, callback) {
             var self = this;
 
@@ -129,7 +107,7 @@
 
             if (!self.preloadedImages[url]) {
                 image = document.createElement('img');
-                Archivist.addEvent(image, 'load', function () {
+                window.addEvent(image, 'load', function () {
                     self.preloadedImages[url] = image;
                     if (callback) {
                         callback();
@@ -156,7 +134,7 @@
         Archivist.Ui.pauseButton.style.display = 'none';
 
         var stream = new Archivist.AudioStream('http://50.7.76.250:8765/stream', function () {
-            Archivist.addEvent(Archivist.Ui.playButton, 'click', function (event) {
+            window.addEvent(Archivist.Ui.playButton, 'click', function (event) {
                 Archivist.Ui.playButton.style.display = 'none';
                 Archivist.Ui.loading.style.display = 'block';
                 stream.start(function() {
@@ -164,18 +142,18 @@
                     Archivist.Ui.pauseButton.style.display = 'block';
                     Archivist.Ui.nowPlaying.style.visibility = '';
                 });
-                Archivist.preventDefault(event);
+                window.preventDefault(event);
             });
 
-            Archivist.addEvent(Archivist.Ui.pauseButton, 'click', function (event) {
+            window.addEvent(Archivist.Ui.pauseButton, 'click', function (event) {
                 stream.stop();
                 Archivist.Ui.nowPlaying.style.visibility = 'hidden';
                 Archivist.Ui.pauseButton.style.display = 'none';
                 Archivist.Ui.playButton.style.display = 'block';
-                Archivist.preventDefault(event);
+                window.preventDefault(event);
             });
 
-            Archivist.addEvent(document, 'keydown', function (event) {
+            window.addEvent(document, 'keydown', function (event) {
                 var keyCode = event.keyCode || event.which;
 
                 if (keyCode == 32) {
@@ -184,13 +162,13 @@
                         Archivist.Ui.nowPlaying.style.visibility = 'hidden';
                         Archivist.Ui.pauseButton.style.display = 'none';
                         Archivist.Ui.playButton.style.display = 'block';
-                        Archivist.preventDefault(event);
+                        window.preventDefault(event);
                     } else {
                         stream.start();
                         Archivist.Ui.nowPlaying.style.visibility = '';
                         Archivist.Ui.playButton.style.display = 'none';
                         Archivist.Ui.pauseButton.style.display = 'block';
-                        Archivist.preventDefault(event);
+                        window.preventDefault(event);
                     }
                 }
             });
