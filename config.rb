@@ -28,14 +28,14 @@ case ENV['TARGET'].to_s.downcase
     activate :deploy do |deploy|
       deploy.build_before = true
       deploy.method = :git
-      deploy.remote   = 'origin'
+      deploy.remote   = 'git@github.com:seventea/archivist-site.git'
     end
   else
     ignore 'CNAME'
     activate :deploy do |deploy|
       deploy.build_before = true
       deploy.method = :git
-      deploy.remote   = 'staging'
+      deploy.remote   = 'git@github.com:seventea/archivist-site-staging.git'
     end
 end
 
