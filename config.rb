@@ -28,6 +28,7 @@ case ENV['TARGET'].to_s.downcase
     activate :deploy do |deploy|
       deploy.build_before = true
       deploy.method = :git
+      deploy.remote   = 'origin'
     end
   else
     ignore 'CNAME'
