@@ -6,6 +6,14 @@
  * Copyright (c) 2014, Seventea Studios
  */
 (function (window, document, undefined) {
+    Opentip.styles.social = {
+      extends: 'dark',
+      target: true,
+      targetJoint: 'bottom',
+      tipJoint: 'top'
+    };
+    Opentip.defaultStyle = 'social';
+
     window.onload = function () {
         window.Archivist = {};
 
