@@ -1,5 +1,4 @@
-//= require vendor/opentip-native
-//= require vendor/soundmanager2-nodebug
+//= require_tree ./vendor
 
 //= require_self
 ###
