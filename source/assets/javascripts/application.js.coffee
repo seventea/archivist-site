@@ -9,7 +9,6 @@
  * Copyright (c) 2014-2015, Seventea Studios
 ###
 
+//= require_tree ./core
 //= require opentip
-//= require events
-//= require prevent-default
 //= require javascript
