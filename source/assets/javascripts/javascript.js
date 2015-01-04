@@ -1,10 +1,3 @@
-/** @licence
- *
- * Archivist.fm website
- * --------------------
- *
- * Copyright (c) 2014, Seventea Studios
- */
 (function (window, document, undefined) {
     window.onload = function () {
         window.Archivist = {};
