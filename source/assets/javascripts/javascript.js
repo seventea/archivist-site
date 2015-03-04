@@ -126,15 +126,19 @@
         Archivist.Ui.playButton.style.display = 'none';
         Archivist.Ui.pauseButton.style.display = 'none';
 
+        function play() {
+          Archivist.Ui.playButton.style.display = 'none';
+          Archivist.Ui.loading.style.display = 'block';
+          stream.start(function() {
+            Archivist.Ui.loading.style.display = 'none';
+            Archivist.Ui.pauseButton.style.display = 'block';
+            Archivist.Ui.nowPlaying.style.visibility = '';
+          });
+        };
+
         var stream = new Archivist.AudioStream('http://50.7.130.2:7500/stream', function () {
             window.addEvent(Archivist.Ui.playButton, 'click', function (event) {
-                Archivist.Ui.playButton.style.display = 'none';
-                Archivist.Ui.loading.style.display = 'block';
-                stream.start(function() {
-                    Archivist.Ui.loading.style.display = 'none';
-                    Archivist.Ui.pauseButton.style.display = 'block';
-                    Archivist.Ui.nowPlaying.style.visibility = '';
-                });
+                play();
                 window.preventDefault(event);
             });
 
@@ -169,6 +173,10 @@
             Archivist.Ui.loading.style.display = 'none';
             Archivist.Ui.playButton.style.display = 'block';
         });
+
+        if (location.search == '?play') {
+          play();
+        }
 
         var backgrounds = [
                 'assets/images/backgrounds/microphone.jpg',
