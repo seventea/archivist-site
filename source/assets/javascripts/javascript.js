@@ -126,7 +126,7 @@
         Archivist.Ui.playButton.style.display = 'none';
         Archivist.Ui.pauseButton.style.display = 'none';
 
-        var stream = new Archivist.AudioStream('http://50.7.76.250:8765/stream', function () {
+        var stream = new Archivist.AudioStream('http://50.7.130.2:7500/stream', function () {
             window.addEvent(Archivist.Ui.playButton, 'click', function (event) {
                 Archivist.Ui.playButton.style.display = 'none';
                 Archivist.Ui.loading.style.display = 'block';
