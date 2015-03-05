@@ -1,5 +1,14 @@
 (function (window, document, undefined) {
     window.onload = function () {
+        if (window.alias) {
+          //window.addEvent(document, 'mousemove', function() {
+          setTimeout(function() {
+            document.location = window.alias;
+          }, 00);
+          //});
+          return;
+        }
+
         window.Archivist = {};
 
         Archivist.Ui = {
