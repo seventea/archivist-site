@@ -145,7 +145,7 @@
           });
         };
 
-        var stream = new Archivist.AudioStream('http://46.4.73.93:8005/stream', function () {
+        var stream = new Archivist.AudioStream('http://88.198.238.45:8005/stream', function () {
             window.addEvent(Archivist.Ui.playButton, 'click', function (event) {
                 play();
                 window.preventDefault(event);
