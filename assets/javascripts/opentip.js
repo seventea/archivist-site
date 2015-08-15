@@ -1,0 +1,1 @@
+(function(){Opentip.styles.social={"extends":"dark",target:!0,targetJoint:"bottom",tipJoint:"top"},Opentip.defaultStyle="social"}).call(this);

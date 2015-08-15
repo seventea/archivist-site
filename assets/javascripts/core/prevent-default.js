@@ -1,0 +1,1 @@
+(function(){window.preventDefault=function(e){return e.returnValue=!1,e.preventDefault?e.preventDefault():void 0}}).call(this);
